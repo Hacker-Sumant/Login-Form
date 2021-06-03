@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+html,
+body {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  user-select: none;
+  transition: all 0.4s ease-in-out;
+  place-items: center;
+  background: var(--background);
+  /* background: linear-gradient(-135deg, #c850c0, #4158d0); */
+}
+::selection {
+  background: #4158d0;
+  color: #fff;
+}
+.wrapper {
+  width: 440px;
+  background: var(--background);
+  border-radius: 15px;
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+.wrapper .title {
+  font-size: 35px;
+  font-weight: 700;
+  text-align: center;
+  padding: 5px 0;
+  color: #5ec;
+  user-select: none;
+  border-radius: 15px 15px 0 0;
+  background: #5ec;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: #5ec 1px 1px 1px;
+}
+.wrapper form {
+  padding: 0px 30px 30px 30px;
+}
+.wrapper form .field {
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+}
+.wrapper form .field input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding-left: 20px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  background: none;
+  transition: all 0.3s ease;
+  color: var(--inpcolor);
+  box-shadow: var(--ipshd);
+}
+.wrapper form .field input:focus,
+form .field input:valid {
+  border-color: #4158d0;
+}
+.wrapper form .field label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  color: #999999;
+  font-weight: 400;
+  font-size: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+form .field input:focus ~ label,
+form .field input:valid ~ label {
+  top: 0%;
+  transition: 0.2s;
+  font-size: 16px;
+  color: var(--labcolor);
+  background: var(--background);
+  transform: translateY(-50%);
+}
+
+form .field input[type="submit"] {
+  color: #30a9f4;
+  border: none;
+  padding-left: 0;
+  margin-top: 5px;
+  font-size: 24px;
+  cursor: pointer;
+  font-weight: 450;
+  border: 2px solid var(--bd);
+  box-shadow: var(--btnshd);
+}
+form .field input[type="submit"]:active {
+  box-shadow: inset -2px -2px 6px rgb(0, 0, 0),
+    inset 2px 2px 6px rgba(53, 55, 61, 0.747);
+  border: 2px solid transparent;
+  color: #5ec;
+}
+#view {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 15rem;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  box-shadow: var(--fashd);
+  background-color: var(--fabg);
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 4px solid var(--bd);
+}
+.checkbox {
+  cursor: pointer;
+  color: var(--color);
+  font-size: 2.4rem;
+  margin-left: -15px;
+  pointer-events: all;
+}
+.toggle {
+  height: 30px;
+  width: 70px;
+}
+.text {
+  pointer-events: none;
+}
+.text::before {
+  content: "Dark Theme";
+  position: relative;
+  font-weight: 500;
+  color: var(--color);
+  text-shadow: 0 0 4px cyan;
+}
+.text.txt::before {
+  content: "Light Theme";
+  position: relative;
+  font-weight: 500;
+  color: var(--color);
+}
+.toggle input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border-radius: 25px;
+  background: var(--background);
+  -webkit-appearance: none;
+  box-shadow: var(--ipshd);
+}
+.toggle input::before {
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: var(--checkboxshd);
+  transition: transform 0.6s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+}
+input:checked::before {
+  left: 52px;
+  transform: translate3d(20%, 0, 0);
+}
+:root {
+  --checkboxshd: -4px -4px 8px #ffffff, 4px 4px 8px #d1d9e6;
+  --labcolor: orange;
+  --inpcolor: rgb(85, 108, 238);
+  --btnshd: 2px 2px 6px rgb(151, 151, 151),
+    inset -2px -2px 6px rgba(107, 107, 107, 0.747);
+  --bd: #ecf0f3;
+  --ipshd: inset -3px -3px 6px #ffffff, inset 3px 3px 6px #d1d9e6;
+  --fashd: -3px -3px 6px #ffffff, 3px 3px 6px #d1d9e6;
+  --fabg: rgb(237, 237, 237);
+  --color: #30a9f4;
+  --background: #f0f0f3;
+  --boxshadow: inset -3px -3px 6px #ffffff, inset 3px 3px 6px #ecf0f3;
+ 
+}
+[data-theme="dark"] {
+  --boxshadow: -3px -3px 6px #383838, 3px 3px 6px #000000;
+  --color: #5ec;
+  --background: #131419;
+  --fabg: #131419;
+  --ipshd: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  --fashd: -2px -2px 6px rgba(255, 255, 255, 0.1),
+    2px 2px 6px rgba(0, 0, 0, 0.8);
+  --bd: #131419;
+  --btnshd: 2px 2px 6px rgb(0, 0, 0),
+    inset -2px -2px 6px rgba(53, 55, 61, 0.747);
+  --labcolor: #30a9f4;
+  --inpcolor: orange;
+  --checkboxshd: inset -2px -2px 6px rgb(29, 29, 29),
+    inset 2px 2px 6px rgba(153, 153, 153, 0.747);
+}
+.eye {
+  position: absolute;
+  margin-left: -40px;
+  margin-top: 18px;
+  position: fixed;
+}
+#hide1 {
+  display: none;
+}
+.eye1 {
+  position: absolute;
+  margin-left: -40px;
+  margin-top: 14px;
+  position: fixed;
+}
+#hide {
+  display: none;
+}
+span {
+  color: rgb(165, 165, 165);
+  font-size: 14px;
+}

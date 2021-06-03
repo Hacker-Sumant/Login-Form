@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Login Form Design</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+    integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+    crossorigin="anonymous" />
+</head>
+
+<body>
+  <div id="view" class="view" data-mode="light"
+    onclick="changeMode(this)">
+    <div class="toggle">
+      <input autocomplete="off" type="checkbox"
+        id="checkbox" class="checkbox">
+    </div>
+    <div class="text"></div>
+  </div>
+  <div class="wrapper">
+    <div class="title">Login Form</div>
+    <form action="#">
+      <div class="field">
+        <input autocomplete="off" type="text"
+          required>
+        <label>Username</label>
+      </div>
+      <div class="field">
+        <input autocomplete="off" type="text"
+          required>
+        <label>Email Address</label>
+      </div>
+      <div class="field">
+        <input id="phone" autocomplete="off" type="number"
+        required>
+        <label>Phone Number</label>
+      </div>
+      <div class="field">
+        <input autocomplete="off" type="password"
+          id="password" required>
+        <label>Password</label>
+        <span class="eye" onclick="toggle()">
+          <i id="hide1" class="fas fa-eye"></i>
+          <i id="hide2"
+            class="fas fa-eye-slash"></i></span>
+      </div>
+      <div class="field">
+        <input autocomplete="off" type="password"
+          id="cpassword" required>
+        <label>Confirm Password</label>
+        <span class="eye1" onclick="toggle2()">
+          <i id="hide" class="fas fa-eye"></i>
+          <i id="hide3"
+            class="fas fa-eye-slash"></i></span>
+      </div>
+      <div class="field">
+        <input autocomplete="off" type="submit"
+          value="Login">
+      </div>
+    </form>
+  </div>
+  <script>
+
+
+        
+    function toggle2() {
+      var x = document.getElementById("cpassword");
+
+      var y = document.getElementById("hide");
+      var z = document.getElementById("hide3");
+
+      if (x.type == "password") {
+        x.type = "text";
+        y.style.display = "block";
+        z.style.display = "none";
+
+      } else {
+        x.type = "password";
+        y.style.display = "none";
+        z.style.display = "block";
+      }
+    }
+
+
+    function toggle() {
+      var a = document.getElementById("password");
+      var c = document.getElementById("hide1");
+      var d = document.getElementById("hide2");
+
+      if (a.type == "password") {
+        a.type = "text";
+        c.style.display = "block";
+        d.style.display = "none";
+
+      } else {
+        a.type = "password";
+        c.style.display = "none";
+        d.style.display = "block";
+      }
+    }
+
+
+    document.querySelector(".toggle").addEventListener('click', function () {
+      document.querySelector(".text").classList.toggle('txt');
+    });
+    function changeMode(themeobj) {
+      if (themeobj.dataset.mode == "light") {
+        document.documentElement.setAttribute("data-theme", "dark");
+        themeobj.dataset.mode = "dark";
+
+      } else {
+        document.documentElement.setAttribute("data-theme", "light");
+        themeobj.dataset.mode = "light";
+      }
+    }
+  </script>
+</body>
+
+</html>
